@@ -28,6 +28,10 @@ SALESFORCE_PRE_COMMANDS:
   - command: wget https://raw.githubusercontent.com/hardisgroupcom/sfdx-hardis/code-analyzer/config/pmd-ruleset.xml -O "${DEFAULT_WORKSPACE}/pmd-ruleset.xml"
     continue_if_failed: false
 
+SALESFORCE_CODE_ANALYZER_APEX_ARGUMENTS:
+  - --rule-selector
+  - -- pmd
+
 SALESFORCE_CODE_ANALYZER_APEX_COMMAND_REMOVE_ARGUMENTS:
   - --rule-selector
   - pmd:Recommended

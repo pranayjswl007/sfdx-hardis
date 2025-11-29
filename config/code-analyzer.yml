@@ -35,22 +35,6 @@ engines:
       apex:
         - .cls
         - .trigger
-      html:
-        - .html
-        - .htm
-        - .xhtml
-        - .xht
-        - .shtml
-        - .cmp
-      javascript:
-        - .js
-        - .cjs
-        - .mjs
-      typescript:
-        - .ts
-      visualforce:
-        - .page
-        - .component
       xml:
         - .xml
 
