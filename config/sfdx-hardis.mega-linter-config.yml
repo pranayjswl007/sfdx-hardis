@@ -11,9 +11,16 @@ DISABLE:
   - HTML
   - SPELL # Uncomment to enable checks of spelling mistakes # - SPELL # Uncomment to disable checks of spelling mistakes
   - XML
+DISABLE_LINTERS:
+  - REPOSITORY_TRUFFLEHOG
+  - SALESFORCE_SFDX_SCANNER_APEX
+  - SALESFORCE_SFDX_SCANNER_AURA
+  - SALESFORCE_SFDX_SCANNER_LWC
 SHOW_ELAPSED_TIME: true
 FILTER_REGEX_EXCLUDE: (\.vscode|staticresources/)
 SALESFORCE_PRE_COMMANDS:
+  - command: echo "Downloading Code Analyzer configuration files... If it fails, you need to manually add code-analyzer.yml and pmd-ruleset.yml at the root of your repository."
+    continue_if_failed: false
   - command: mkdir -p "${DEFAULT_WORKSPACE}/config" && wget https://raw.githubusercontent.com/hardisgroupcom/sfdx-hardis/main/config/pmd-ruleset.xml -O "${DEFAULT_WORKSPACE}/config/pmd-ruleset.xml"
     continue_if_failed: false
   - command: wget https://raw.githubusercontent.com/hardisgroupcom/sfdx-hardis/code-analyzer/config/code-analyzer.yml -O "${DEFAULT_WORKSPACE}/code-analyzer.yml"
